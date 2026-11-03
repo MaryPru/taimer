@@ -1,0 +1,21 @@
+{
+  // Проверка типов сервера, общих модулей и тестов. Сборка сервера: tsconfig.build.json.
+  // Клиент и тесты интерфейса проверяются отдельно: src/web/tsconfig.json и tests/web/tsconfig.json.
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": ["node"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "include": ["src/server", "src/shared", "tests", "vite.config.ts", "vitest.config.ts"],
+  // Тесты интерфейса проверяются со своим tsconfig: им нужны DOM и JSX.
+  "exclude": ["tests/web"]
+}

@@ -1,0 +1,8 @@
+{
+  // Тесты интерфейса: DOM и JSX как у клиента, плюс типы Node для сервера, который они поднимают.
+  "extends": "../../src/web/tsconfig.json",
+  "compilerOptions": {
+    "types": ["vite/client", "node"]
+  },
+  "include": ["."]
+}

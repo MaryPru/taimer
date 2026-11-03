@@ -1,0 +1,19 @@
+# зависимости и сборка
+/node_modules
+/dist
+*.tsbuildinfo
+
+# база приложения (создаётся при первом запуске)
+/data
+
+# логи
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ОС и редакторы
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json

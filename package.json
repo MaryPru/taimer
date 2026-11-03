@@ -1,0 +1,49 @@
+{
+  "name": "taimer",
+  "version": "0.1.0",
+  "description": "Учёт рабочего времени сотрудников: таймер задач и отчёт за период",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^22.13.0 || ^24.0.0 || >=26.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "tsx watch --disable-warning=ExperimentalWarning src/server/index.ts",
+    "dev:web": "vite",
+    "build": "tsc -p tsconfig.build.json && vite build",
+    "start": "npm run build && npm run serve",
+    "serve": "node --disable-warning=ExperimentalWarning dist/server/index.js",
+    "seed": "tsx --disable-warning=ExperimentalWarning src/server/seed.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json && tsc -p src/web/tsconfig.json && tsc -p tests/web/tsconfig.json"
+  },
+  "dependencies": {
+    "@fastify/static": "^10.1.8",
+    "fastify": "^5.12.8",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "concurrently": "^10.0.6",
+    "jsdom": "^29.1.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  },
+  "overrides": {
+    "glob": "^14.0.3"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}
